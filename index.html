@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milles Styles | Boutique en ligne</title>
+<meta name="description" content="Milles Styles, votre boutique de vêtements, chaussures, sacs et accessoires.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+ --dark:#211b1b;--gold:#b79562;--cream:#f8f5f0;
+ --white:#fff;--gray:#777;--border:#e9e3da;
+}
+body{font-family:Arial,sans-serif;background:var(--cream);color:var(--dark)}
+button,input,select{font:inherit}
+button{cursor:pointer}
+header{background:#211b1b;color:white;position:sticky;top:0;z-index:10}
+.topbar{text-align:center;padding:8px;background:#b79562;font-size:12px;color:#211b1b}
+.nav{max-width:1200px;margin:auto;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font-family:Georgia,serif;font-size:25px;letter-spacing:2px;color:#d7bb91;font-weight:bold}
+.navlinks{display:flex;gap:22px;align-items:center}
+.navlinks a{color:white;text-decoration:none;font-size:14px}
+.cart-btn{background:#b79562;border:0;padding:11px 16px;border-radius:5px;color:#211b1b;font-weight:bold}
+.hero{min-height:470px;background:linear-gradient(90deg,rgba(0,0,0,.76),rgba(0,0,0,.1)),url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600') center/cover;display:flex;align-items:center;color:white}
+.hero-content{max-width:1200px;width:100%;margin:auto;padding:50px 7%}
+.hero small{color:#e4c18c;letter-spacing:4px}
+.hero h1{font-family:Georgia,serif;font-size:clamp(38px,6vw,68px);max-width:600px;margin:18px 0}
+.hero p{line-height:1.8;max-width:440px;color:#eee}
+.gold-btn{display:inline-block;margin-top:25px;background:#b79562;color:#211b1b;border:0;padding:15px 25px;text-decoration:none;font-weight:bold;border-radius:3px}
+.section{max-width:1200px;margin:auto;padding:65px 5%}
+.section-head{text-align:center;margin-bottom:35px}
+.section-head small{color:#a17b4a;letter-spacing:3px}
+.section-head h2{font:36px Georgia,serif;margin:12px 0}
+.section-head p{color:var(--gray);font-size:14px}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.category{position:relative;height:180px;border:0;overflow:hidden;border-radius:5px;background:#ddd}
+.category img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.category:hover img{transform:scale(1.08)}
+.category span{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.8));color:white;padding:35px 10px 15px;font-weight:bold}
+.toolbar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:25px}
+.toolbar input,.toolbar select{padding:12px;border:1px solid var(--border);background:white;border-radius:4px}
+.toolbar input{flex:1;min-width:180px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px}
+.filter{padding:9px 16px;background:white;border:1px solid var(--border);border-radius:30px}
+.filter.active,.filter:hover{background:#211b1b;color:white}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.product{background:white;border-radius:5px;overflow:hidden;transition:.2s}
+.product:hover{transform:translateY(-4px);box-shadow:0 8px 25px #00000012}
+.product-image{height:245px;position:relative;background:#eee}
+.product-image img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:12px;left:12px;background:#b79562;padding:6px 9px;font-size:10px;font-weight:bold}
+.product-info{padding:16px}
+.product-info small{color:#a17b4a}
+.product-info h3{font-size:15px;margin:8px 0}
+.price{font-weight:bold;font-size:17px}
+.old-price{text-decoration:line-through;color:#999;font-size:12px;margin-left:7px}
+.product-info select{width:100%;padding:9px;margin-top:12px;border:1px solid var(--border)}
+.add-btn{width:100%;padding:12px;margin-top:10px;background:#211b1b;color:white;border:0;border-radius:3px}
+.add-btn:hover{background:#b79562;color:#211b1b}
+.empty{text-align:center;padding:35px;color:#777;grid-column:1/-1}
+.benefits{background:#211b1b;color:white}
+.benefit-grid{max-width:1200px;margin:auto;padding:40px 5%;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+.benefit-grid h3{color:#d7bb91;margin:10px}
+.benefit-grid p{font-size:13px;color:#ddd}
+footer{background:#171313;color:white;text-align:center;padding:40px 20px}
+footer .logo{margin-bottom:12px}
+footer p{color:#ccc;font-size:13px;margin:8px}
+footer a{color:#d7bb91;text-decoration:none}
+.overlay{display:none;position:fixed;inset:0;background:#0009;z-index:20}
+.overlay.show{display:block}
+.drawer{position:absolute;right:0;top:0;height:100%;width:min(430px,100%);background:white;padding:22px;overflow:auto}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:15px}
+.close{border:0;background:none;font-size:25px}
+.cart-item{display:flex;gap:12px;padding:15px 0;border-bottom:1px solid var(--border)}
+.cart-item img{width:75px;height:85px;object-fit:cover}
+.cart-item p{font-size:13px;margin:5px 0}
+.qty{display:flex;align-items:center;gap:10px;margin-top:8px}
+.qty button{width:25px;height:25px;border:1px solid var(--border);background:white}
+.cart-total{display:flex;justify-content:space-between;font-weight:bold;font-size:19px;margin:22px 0}
+.checkout{width:100%;padding:15px;background:#b79562;border:0;font-weight:bold}
+.contact{margin-top:13px;text-align:center;font-size:12px;color:#777}
+@media(max-width:800px){
+ .products{grid-template-columns:repeat(2,1fr)}
+ .categories{grid-template-columns:repeat(2,1fr)}
+ .navlinks{display:none}
+ .product-image{height:210px}
+}
+@media(max-width:450px){
+ .products{gap:10px}
+ .product-info{padding:10px}
+ .product-image{height:170px}
+ .section{padding:45px 4%}
+ .hero{min-height:410px}
+ .benefit-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="topbar">BIENVENUE CHEZ MILLES STYLES — LE STYLE À VOTRE PORTÉE</div>
+ <nav class="nav">
+  <div class="logo">MILLES STYLES</div>
+  <div class="navlinks">
+   <a href="#accueil">Accueil</a>
+   <a href="#categories">Catégories</a>
+   <a href="#boutique">Boutique</a>
+   <a href="#contact">Contact</a>
+  </div>
+  <button class="cart-btn" onclick="openCart()">Panier (<span id="cartCount">0</span>)</button>
+ </nav>
+</header>
+
+<section class="hero" id="accueil">
+ <div class="hero-content">
+  <small>COLLECTION & TENDANCES</small>
+  <h1>Votre style, votre identité.</h1>
+  <p>Découvrez notre sélection de vêtements, chaussures, sacs et accessoires. Des articles pour tous les goûts et tous les budgets.</p>
+  <a class="gold-btn" href="#boutique">DÉCOUVRIR LA BOUTIQUE</a>
+ </div>
+</section>
+
+<section class="section" id="categories">
+ <div class="section-head">
+  <small>NOS UNIVERS</small>
+  <h2>Nos catégories</h2>
+  <p>Trouvez les articles qui correspondent à votre style.</p>
+ </div>
+ <div class="categories">
+  <button class="category" onclick="chooseCategory('Vêtements')">
+   <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500" alt="Vêtements">
+   <span>Vêtements</span>
+  </button>
+  <button class="category" onclick="chooseCategory('Chaussures')">
+   <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Chaussures">
+   <span>Chaussures</span>
+  </button>
+  <button class="category" onclick="chooseCategory('Sacs')">
+   <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500" alt="Sacs">
+   <span>Sacs</span>
+  </button>
+  <button class="category" onclick="chooseCategory('Accessoires')">
+   <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Accessoires">
+   <span>Accessoires</span>
+  </button>
+ </div>
+</section>
+
+<section class="section" id="boutique">
+ <div class="section-head">
+  <small>NOTRE SÉLECTION</small>
+  <h2>Découvrez nos produits</h2>
+  <p>Choisissez votre article et ajoutez-le à votre panier.</p>
+ </div>
+ <div class="toolbar">
+  <input id="search" type="search" placeholder="Rechercher un article..." oninput="renderProducts()">
+  <select id="quality" onchange="renderProducts()">
+   <option value="">Toutes les qualités</option>
+   <option value="Standard">Standard</option>
+   <option value="Premium">Premium</option>
+   <option value="Luxe">Luxe</option>
+  </select>
+  <select id="sort" onchange="renderProducts()">
+   <option value="default">Trier par</option>
+   <option value="low">Prix croissant</option>
+   <option value="high">Prix décroissant</option>
+  </select>
+ </div>
+ <div class="filters" id="filters"></div>
+ <div class="products" id="products"></div>
+</section>
+
+<section class="benefits">
+ <div class="benefit-grid">
+  <div><h3>✦ Qualité</h3><p>Des articles proposés en différentes gammes.</p></div>
+  <div><h3>✦ Diversité</h3><p>Un choix de produits pour différents styles.</p></div>
+  <div><h3>✦ Proximité</h3><p>Un contact direct pour vos commandes.</p></div>
+ </div>
+</section>
+
+<footer id="contact">
+ <div class="logo">MILLES STYLES</div>
+ <p>Le style qui vous ressemble.</p>
+ <p>Vêtements • Chaussures • Sacs • Accessoires</p>
+ <p>WhatsApp : <a id="footerWhatsapp" href="#">Nous contacter</a></p>
+ <p>© 2026 MILLES STYLES — Tous droits réservés.</p>
+</footer>
+
+<div class="overlay" id="overlay" onclick="closeOutside(event)">
+ <div class="drawer">
+  <div class="drawer-head">
+   <h2>Mon panier</h2>
+   <button class="close" onclick="closeCart()">×</button>
+  </div>
+  <div id="cartItems"></div>
+  <div class="cart-total"><span>Total</span><span id="total">0 FCFA</span></div>
+  <button class="checkout" onclick="checkout()">COMMANDER SUR WHATSAPP</button>
+  <p class="contact">La commande sera préparée dans WhatsApp. Le paiement sera convenu avec la boutique.</p>
+ </div>
+</div>
+
+<script>
+// PERSONNALISATION DE LA BOUTIQUE
+const WHATSAPP_NUMBER = "2290146548839"; 
+
+// CATALOGUE DE DÉMONSTRATION
+const products = [
+ {id:1,name:"Chemise élégante",category:"Vêtements",quality:"Premium",price:8500,image:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=600",sizes:["S","M","L","XL"],colors:["Blanc","Noir"]},
+ {id:2,name:"T-shirt classique",category:"Vêtements",quality:"Standard",price:4000,image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600",sizes:["S","M","L","XL"],colors:["Blanc","Noir"]},
+ {id:3,name:"Robe tendance",category:"Vêtements",quality:"Luxe",price:15000,image:"https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600",sizes:["S","M","L"],colors:["Noir","Beige"]},
+ {id:4,name:"Sneakers modernes",category:"Chaussures",quality:"Premium",price:18000,image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600",sizes:["38","39","40","41","42","43"],colors:["Rouge","Blanc"]},
+ {id:5,name:"Chaussures urbaines",category:"Chaussures",quality:"Standard",price:12000,image:"https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600",sizes:["39","40","41","42","43"],colors:["Noir","Marron"]},
+ {id:6,name:"Sac à main chic",category:"Sacs",quality:"Luxe",price:22000,image:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600",sizes:["Unique"],colors:["Noir","Beige"]},
+ {id:7,name:"Montre élégante",category:"Accessoires",quality:"Premium",price:12500,image:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600",sizes:["Unique"],colors:["Noir","Argent"]},
+ {id:8,name:"Lunettes tendance",category:"Accessoires",quality:"Standard",price:5000,image:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600",sizes:["Unique"],colors:["Noir","Marron"]}
+];
+
+let cart = JSON.parse(localStorage.getItem("millesCart") || "[]");
+let activeCategory = "Tous";
+
+const money = n => new Intl.NumberFormat("fr-FR").format(n)+" FCFA";
+
+function saveCart(){
+ localStorage.setItem("millesCart",JSON.stringify(cart));
+ updateCart();
+}
+
+function chooseCategory(category){
+ activeCategory=category;
+ renderProducts();
+ document.getElementById("boutique").scrollIntoView({behavior:"smooth"});
+}
+
+function renderFilters(){
+ const categories=["Tous","Vêtements","Chaussures","Sacs","Accessoires"];
+ document.getElementById("filters").innerHTML=categories.map(c=>
+ `<button class="filter ${activeCategory===c?'active':''}" onclick="chooseCategory('${c}')">${c}</button>`
+ ).join("");
+}
+
+function renderProducts(){
+ renderFilters();
+ let list=products.filter(p=>{
+  const search=document.getElementById("search").value.toLowerCase();
+  const quality=document.getElementById("quality").value;
+  return (activeCategory==="Tous"||p.category===activeCategory)
+   && p.name.toLowerCase().includes(search)
+   && (!quality||p.quality===quality);
+ });
+ const sort=document.getElementById("sort").value;
+ if(sort==="low")list.sort((a,b)=>a.price-b.price);
+ if(sort==="high")list.sort((a,b)=>b.price-a.price);
+
+ const container=document.getElementById("products");
+ if(!list.length){
+  container.innerHTML='<div class="empty">Aucun produit trouvé.</div>';
+  return;
+ }
+ container.innerHTML=list.map(p=>`
+ <article class="product">
+  <div class="product-image">
+   <img src="${p.image}" alt="${p.name}" loading="lazy">
+   <span class="tag">${p.quality}</span>
+  </div>
+  <div class="product-info">
+   <small>${p.category}</small>
+   <h3>${p.name}</h3>
+   <div class="price">${money(p.price)}</div>
+   <select id="size-${p.id}" aria-label="Taille de ${p.name}">
+    ${p.sizes.map(s=>`<option>${s}</option>`).join("")}
+   </select>
+   <select id="color-${p.id}" aria-label="Couleur de ${p.name}">
+    ${p.colors.map(c=>`<option>${c}</option>`).join("")}
+   </select>
+   <button class="add-btn" onclick="addToCart(${p.id})">AJOUTER AU PANIER</button>
+  </div>
+ </article>`).join("");
+}
+
+function addToCart(id){
+ const p=products.find(x=>x.id===id);
+ const size=document.getElementById("size-"+id).value;
+ const color=document.getElementById("color-"+id).value;
+ const key=id+"-"+size+"-"+color;
+ const found=cart.find(x=>x.key===key);
+ if(found)found.qty++;
+ else cart.push({key,id,size,color,qty:1});
+ saveCart();
+ alert("Article ajouté au panier !");
+}
+
+function updateCart(){
+ const count=cart.reduce((s,x)=>s+x.qty,0);
+ document.getElementById("cartCount").textContent=count;
+ document.getElementById("total").textContent=money(cart.reduce((s,x)=>{
+  return s+products.find(p=>p.id===x.id).price*x.qty;
+ },0));
+ const box=document.getElementById("cartItems");
+ if(!cart.length){
+  box.innerHTML='<p class="empty">Votre panier est vide.</p>';
+  return;
+ }
+ box.innerHTML=cart.map(x=>{
+  const p=products.find(p=>p.id===x.id);
+  return `<div class="cart-item">
+   <img src="${p.image}" alt="">
+   <div style="flex:1">
+    <strong>${p.name}</strong>
+    <p>${x.size} • ${x.color}</p>
+    <p>${money(p.price)}</p>
+    <div class="qty">
+     <button onclick="changeQty('${x.key}',-1)">−</button>
+     <span>${x.qty}</span>
+     <button onclick="changeQty('${x.key}',1)">+</button>
+     <button onclick="removeItem('${x.key}')" style="margin-left:auto;width:auto;padding:3px 7px">Supprimer</button>
+    </div>
+   </div>
+  </div>`;
+ }).join("");
+}
+
+function changeQty(key,delta){
+ const item=cart.find(x=>x.key===key);
+ if(item){
+  item.qty+=delta;
+  if(item.qty<=0)removeItem(key);
+  else saveCart();
+ }
+}
+
+function removeItem(key){
+ cart=cart.filter(x=>x.key!==key);
+ saveCart();
+}
+
+function openCart(){
+ document.getElementById("overlay").classList.add("show");
+}
+function closeCart(){
+ document.getElementById("overlay").classList.remove("show");
+}
+function closeOutside(e){
+ if(e.target.id==="overlay")closeCart();
+}
+
+function checkout(){
+ if(!cart.length){
+  alert("Votre panier est vide.");
+  return;
+ }
+ if(!/^229\d{10}$/.test(WHATSAPP_NUMBER)){
+  alert("Configure d'abord ton numéro WhatsApp dans le code.");
+  return;
+ }
+ let total=0;
+ let message="Bonjour MILLES STYLES ! Je souhaite commander :\n\n";
+ cart.forEach(x=>{
+  const p=products.find(p=>p.id===x.id);
+  total+=p.price*x.qty;
+  message+=`• ${p.name}\n  Qualité : ${p.quality}\n  Taille : ${x.size}\n  Couleur : ${x.color}\n  Quantité : ${x.qty}\n  Prix : ${money(p.price*x.qty)}\n\n`;
+ });
+ message+="TOTAL : "+money(total);
+ window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank");
+}
+
+document.getElementById("footerWhatsapp").href="https://wa.me/"+WHATSAPP_NUMBER;
+renderProducts();
+updateCart();
+</script>
+</body>
+</html>
