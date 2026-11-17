@@ -4,369 +4,563 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Milles Styles | Boutique en ligne</title>
-<meta name="description" content="Milles Styles, votre boutique de vêtements, chaussures, sacs et accessoires.">
+<meta name="description" content="MILLES STYLES - Boutique de mode, vêtements, chaussures, sacs et accessoires.">
+<title>MILLES STYLES | Boutique officielle</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
- --dark:#211b1b;--gold:#b79562;--cream:#f8f5f0;
- --white:#fff;--gray:#777;--border:#e9e3da;
+:root {
+  --black:#11110f;
+  --gold:#c7a66a;
+  --gold-light:#e4cfaa;
+  --cream:#f6f2eb;
+  --white:#fff;
+  --gray:#777;
+  --border:#e9e3d9;
+  --green:#237b50;
 }
-body{font-family:Arial,sans-serif;background:var(--cream);color:var(--dark)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--black)}
 button,input,select{font:inherit}
 button{cursor:pointer}
-header{background:#211b1b;color:white;position:sticky;top:0;z-index:10}
-.topbar{text-align:center;padding:8px;background:#b79562;font-size:12px;color:#211b1b}
-.nav{max-width:1200px;margin:auto;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.logo{font-family:Georgia,serif;font-size:25px;letter-spacing:2px;color:#d7bb91;font-weight:bold}
-.navlinks{display:flex;gap:22px;align-items:center}
-.navlinks a{color:white;text-decoration:none;font-size:14px}
-.cart-btn{background:#b79562;border:0;padding:11px 16px;border-radius:5px;color:#211b1b;font-weight:bold}
-.hero{min-height:470px;background:linear-gradient(90deg,rgba(0,0,0,.76),rgba(0,0,0,.1)),url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600') center/cover;display:flex;align-items:center;color:white}
-.hero-content{max-width:1200px;width:100%;margin:auto;padding:50px 7%}
-.hero small{color:#e4c18c;letter-spacing:4px}
-.hero h1{font-family:Georgia,serif;font-size:clamp(38px,6vw,68px);max-width:600px;margin:18px 0}
-.hero p{line-height:1.8;max-width:440px;color:#eee}
-.gold-btn{display:inline-block;margin-top:25px;background:#b79562;color:#211b1b;border:0;padding:15px 25px;text-decoration:none;font-weight:bold;border-radius:3px}
-.section{max-width:1200px;margin:auto;padding:65px 5%}
-.section-head{text-align:center;margin-bottom:35px}
-.section-head small{color:#a17b4a;letter-spacing:3px}
-.section-head h2{font:36px Georgia,serif;margin:12px 0}
-.section-head p{color:var(--gray);font-size:14px}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.topbar{background:var(--black);color:#eee;text-align:center;padding:9px;font-size:12px;letter-spacing:1px}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--border)}
+.header-main{max-width:1250px;margin:auto;padding:18px 4%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-family:'Playfair Display',serif;font-size:27px;font-weight:700;letter-spacing:2px}
+.logo span{color:var(--gold)}
+.logo small{display:block;font:9px 'DM Sans';letter-spacing:5px;text-align:center;margin-top:2px}
+.header-actions{display:flex;align-items:center;gap:18px}
+.icon-btn{border:0;background:none;font-size:21px;position:relative;color:var(--black)}
+.count{position:absolute;top:-8px;right:-10px;background:var(--gold);color:#111;border-radius:50%;font-size:10px;width:17px;height:17px;display:grid;place-items:center}
+nav{display:flex;justify-content:center;gap:30px;padding:0 15px 15px;flex-wrap:wrap}
+nav a{font-size:12px;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+nav a:hover{color:#ad8747}
+.hero{min-height:490px;background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.1)),url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=85') center/cover;display:flex;align-items:center;color:white;padding:60px 8%}
+.hero-content{max-width:540px}
+.eyebrow{color:var(--gold-light);letter-spacing:4px;text-transform:uppercase;font-size:11px;font-weight:700}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(42px,6vw,72px);line-height:1.08;margin:18px 0}
+.hero p{line-height:1.8;color:#eee;max-width:440px;font-size:14px}
+.btn{border:0;background:var(--gold);color:#17130d;padding:14px 23px;font-weight:700;text-transform:uppercase;font-size:11px;letter-spacing:1px;display:inline-block}
+.btn:hover{background:var(--gold-light)}
+.btn-dark{background:var(--black);color:white}
+.btn-outline{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+.hero .btn{margin-top:27px}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;padding:30px 5%;background:var(--cream);text-align:center}
+.benefit strong{display:block;font-size:12px;margin-bottom:6px}
+.benefit span{font-size:11px;color:var(--gray)}
+.section{max-width:1250px;margin:auto;padding:65px 4%}
+.section-heading{text-align:center;margin-bottom:30px}
+.section-heading small{color:#a17e43;letter-spacing:3px;text-transform:uppercase;font-size:10px;font-weight:700}
+.section-heading h2{font-family:'Playfair Display',serif;font-size:34px;margin:9px 0}
+.section-heading p{color:var(--gray);font-size:13px}
 .categories{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.category{position:relative;height:180px;border:0;overflow:hidden;border-radius:5px;background:#ddd}
-.category img{width:100%;height:100%;object-fit:cover;transition:.4s}
-.category:hover img{transform:scale(1.08)}
-.category span{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.8));color:white;padding:35px 10px 15px;font-weight:bold}
-.toolbar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:25px}
-.toolbar input,.toolbar select{padding:12px;border:1px solid var(--border);background:white;border-radius:4px}
-.toolbar input{flex:1;min-width:180px}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:25px}
-.filter{padding:9px 16px;background:white;border:1px solid var(--border);border-radius:30px}
-.filter.active,.filter:hover{background:#211b1b;color:white}
-.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.product{background:white;border-radius:5px;overflow:hidden;transition:.2s}
-.product:hover{transform:translateY(-4px);box-shadow:0 8px 25px #00000012}
-.product-image{height:245px;position:relative;background:#eee}
-.product-image img{width:100%;height:100%;object-fit:cover}
-.tag{position:absolute;top:12px;left:12px;background:#b79562;padding:6px 9px;font-size:10px;font-weight:bold}
-.product-info{padding:16px}
-.product-info small{color:#a17b4a}
-.product-info h3{font-size:15px;margin:8px 0}
-.price{font-weight:bold;font-size:17px}
-.old-price{text-decoration:line-through;color:#999;font-size:12px;margin-left:7px}
-.product-info select{width:100%;padding:9px;margin-top:12px;border:1px solid var(--border)}
-.add-btn{width:100%;padding:12px;margin-top:10px;background:#211b1b;color:white;border:0;border-radius:3px}
-.add-btn:hover{background:#b79562;color:#211b1b}
-.empty{text-align:center;padding:35px;color:#777;grid-column:1/-1}
-.benefits{background:#211b1b;color:white}
-.benefit-grid{max-width:1200px;margin:auto;padding:40px 5%;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
-.benefit-grid h3{color:#d7bb91;margin:10px}
-.benefit-grid p{font-size:13px;color:#ddd}
-footer{background:#171313;color:white;text-align:center;padding:40px 20px}
-footer .logo{margin-bottom:12px}
-footer p{color:#ccc;font-size:13px;margin:8px}
-footer a{color:#d7bb91;text-decoration:none}
-.overlay{display:none;position:fixed;inset:0;background:#0009;z-index:20}
+.category{height:230px;position:relative;overflow:hidden;cursor:pointer;background:#ddd}
+.category img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.category:hover img{transform:scale(1.07)}
+.category:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.65))}
+.category-label{position:absolute;bottom:20px;left:20px;color:white;z-index:1}
+.category-label strong{font-family:'Playfair Display',serif;font-size:22px;display:block}
+.category-label span{font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.promo{margin:10px 4%;background:var(--black);color:white;text-align:center;padding:45px 15px}
+.promo h2{font-family:'Playfair Display',serif;font-size:34px;margin:10px}
+.promo p{font-size:13px;color:#ddd;margin-bottom:20px}
+.shop-tools{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.shop-tools input,.shop-tools select{padding:12px;border:1px solid var(--border);background:white;min-width:140px;flex:1;outline:none}
+.shop-tools input:focus,.shop-tools select:focus{border-color:var(--gold)}
+.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px 16px}
+.product-card{position:relative;min-width:0}
+.product-image{height:270px;background:var(--cream);position:relative;overflow:hidden}
+.product-image img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.product-card:hover .product-image img{transform:scale(1.04)}
+.tag{position:absolute;top:12px;left:12px;background:var(--gold);padding:6px 9px;font-size:9px;font-weight:700;text-transform:uppercase}
+.favorite{position:absolute;right:12px;top:10px;border:0;background:#ffffffdf;border-radius:50%;width:33px;height:33px;font-size:17px}
+.favorite.active{color:#c13c4b}
+.product-info{padding:12px 2px}
+.product-cat{font-size:9px;color:#a17e43;text-transform:uppercase;letter-spacing:1.5px}
+.product-info h3{font-size:13px;margin:6px 0;font-weight:600}
+.price{font-size:14px;font-weight:700}
+.old-price{text-decoration:line-through;color:#999;font-size:11px;margin-left:7px;font-weight:400}
+.card-actions{display:flex;gap:7px;margin-top:11px}
+.card-actions button{flex:1;padding:10px 5px;font-size:10px;text-transform:uppercase;font-weight:700;border:1px solid var(--black);background:var(--black);color:white}
+.card-actions button:last-child{background:white;color:var(--black)}
+.card-actions button:hover{background:var(--gold);border-color:var(--gold);color:#111}
+.empty{text-align:center;padding:35px;color:var(--gray);grid-column:1/-1}
+.newsletter{background:var(--cream);padding:55px 20px;text-align:center}
+.newsletter h2{font-family:'Playfair Display',serif;font-size:30px;margin-bottom:10px}
+.newsletter p{font-size:13px;color:var(--gray);margin-bottom:20px}
+.newsletter form{display:flex;max-width:460px;margin:auto}
+.newsletter input{flex:1;min-width:0;padding:14px;border:1px solid var(--border)}
+footer{background:var(--black);color:white;padding:50px 5% 20px}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px}
+footer h3{font-family:'Playfair Display',serif;margin-bottom:15px}
+footer p,footer a{font-size:12px;color:#bbb;line-height:2;display:block}
+footer a:hover{color:var(--gold)}
+.copyright{border-top:1px solid #333;margin-top:35px;padding-top:20px;text-align:center;font-size:11px;color:#999}
+.overlay{position:fixed;inset:0;background:#0009;z-index:40;display:none}
 .overlay.show{display:block}
-.drawer{position:absolute;right:0;top:0;height:100%;width:min(430px,100%);background:white;padding:22px;overflow:auto}
-.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:15px}
+.drawer{position:fixed;right:0;top:0;width:min(430px,100%);height:100%;background:white;z-index:50;transform:translateX(110%);transition:.3s;padding:25px;overflow:auto}
+.drawer.show{transform:translateX(0)}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:18px}
 .close{border:0;background:none;font-size:25px}
-.cart-item{display:flex;gap:12px;padding:15px 0;border-bottom:1px solid var(--border)}
-.cart-item img{width:75px;height:85px;object-fit:cover}
-.cart-item p{font-size:13px;margin:5px 0}
-.qty{display:flex;align-items:center;gap:10px;margin-top:8px}
-.qty button{width:25px;height:25px;border:1px solid var(--border);background:white}
-.cart-total{display:flex;justify-content:space-between;font-weight:bold;font-size:19px;margin:22px 0}
-.checkout{width:100%;padding:15px;background:#b79562;border:0;font-weight:bold}
-.contact{margin-top:13px;text-align:center;font-size:12px;color:#777}
-@media(max-width:800px){
- .products{grid-template-columns:repeat(2,1fr)}
+.cart-row{display:flex;gap:12px;padding:15px 0;border-bottom:1px solid var(--border)}
+.cart-row img{width:75px;height:85px;object-fit:cover;background:var(--cream)}
+.cart-row h4{font-size:12px;margin:5px 0}
+.cart-row p{font-size:12px;color:#9a7842;font-weight:700}
+.qty{display:flex;align-items:center;gap:9px;margin-top:8px}
+.qty button{width:24px;height:24px;border:1px solid var(--border);background:white}
+.cart-total{display:flex;justify-content:space-between;font-weight:700;padding:20px 0}
+.full{width:100%;text-align:center}
+.modal{position:fixed;z-index:60;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:15px}
+.modal.show{display:flex}
+.modal-box{background:white;width:min(750px,100%);max-height:90vh;overflow:auto;padding:25px;position:relative}
+.detail-layout{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.detail-layout img{width:100%;height:380px;object-fit:cover;background:var(--cream)}
+.detail-layout h2{font-family:'Playfair Display',serif;margin:12px 0}
+.detail-layout p{font-size:13px;color:var(--gray);line-height:1.7;margin:12px 0}
+.detail-layout label{font-size:11px;display:block;margin:15px 0 7px}
+.detail-layout select{padding:10px;border:1px solid var(--border);width:100%}
+.admin-form{display:grid;gap:12px}
+.admin-form input,.admin-form select,.admin-form textarea{padding:12px;border:1px solid var(--border);width:100%}
+.admin-form textarea{min-height:70px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,100px);background:var(--black);color:white;padding:13px 20px;z-index:100;font-size:12px;transition:.3s}
+.toast.show{transform:translate(-50%,0)}
+@media(max-width:850px){
+ .product-grid{grid-template-columns:repeat(3,1fr)}
  .categories{grid-template-columns:repeat(2,1fr)}
- .navlinks{display:none}
- .product-image{height:210px}
+ .footer-grid{grid-template-columns:repeat(2,1fr)}
+ .benefits{grid-template-columns:repeat(2,1fr)}
 }
-@media(max-width:450px){
- .products{gap:10px}
- .product-info{padding:10px}
- .product-image{height:170px}
+@media(max-width:560px){
+ .header-main{padding:14px 4%}
+ .logo{font-size:21px}
+ nav{gap:15px}
+ nav a{font-size:10px}
+ .hero{min-height:420px;padding:40px 7%}
+ .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 10px}
+ .product-image{height:205px}
  .section{padding:45px 4%}
- .hero{min-height:410px}
- .benefit-grid{grid-template-columns:1fr}
+ .section-heading h2{font-size:28px}
+ .category{height:180px}
+ .footer-grid{grid-template-columns:1fr 1fr;gap:25px}
+ .detail-layout{grid-template-columns:1fr}
+ .detail-layout img{height:260px}
+ .newsletter form{flex-direction:column;gap:8px}
 }
 </style>
 </head>
+
 <body>
+<div class="topbar">BIENVENUE CHEZ MILLES STYLES — L'ÉLÉGANCE À PORTÉE DE MAIN</div>
 
 <header>
- <div class="topbar">BIENVENUE CHEZ MILLES STYLES — LE STYLE À VOTRE PORTÉE</div>
- <nav class="nav">
-  <div class="logo">MILLES STYLES</div>
-  <div class="navlinks">
-   <a href="#accueil">Accueil</a>
-   <a href="#categories">Catégories</a>
-   <a href="#boutique">Boutique</a>
-   <a href="#contact">Contact</a>
+ <div class="header-main">
+  <a href="#" class="logo">MILLES <span>STYLES</span><small>MODE • ÉLÉGANCE • STYLE</small></a>
+  <div class="header-actions">
+   <button class="icon-btn" onclick="openFavorites()" title="Favoris">♡</button>
+   <button class="icon-btn" onclick="openCart()" title="Panier">🛍<span class="count" id="cartCount">0</span></button>
+   <button class="icon-btn" onclick="openAdmin()" title="Administration">⚙</button>
   </div>
-  <button class="cart-btn" onclick="openCart()">Panier (<span id="cartCount">0</span>)</button>
+ </div>
+ <nav>
+  <a href="#">Accueil</a>
+  <a href="#categories">Catégories</a>
+  <a href="#boutique">Boutique</a>
+  <a href="#promotions">Promotions</a>
+  <a href="#contact">Contact</a>
  </nav>
 </header>
 
-<section class="hero" id="accueil">
+<section class="hero">
  <div class="hero-content">
-  <small>COLLECTION & TENDANCES</small>
-  <h1>Votre style, votre identité.</h1>
-  <p>Découvrez notre sélection de vêtements, chaussures, sacs et accessoires. Des articles pour tous les goûts et tous les budgets.</p>
-  <a class="gold-btn" href="#boutique">DÉCOUVRIR LA BOUTIQUE</a>
+  <div class="eyebrow">Collection exclusive</div>
+  <h1>L'élégance est un art.</h1>
+  <p>Découvrez une sélection de vêtements, chaussures et accessoires soigneusement choisis pour révéler votre style.</p>
+  <a href="#boutique" class="btn">Découvrir la collection</a>
  </div>
 </section>
 
+<div class="benefits">
+ <div class="benefit"><strong>✦ Sélection tendance</strong><span>Des articles choisis avec soin</span></div>
+ <div class="benefit"><strong>✦ Commande facile</strong><span>Contact direct sur WhatsApp</span></div>
+ <div class="benefit"><strong>✦ Service client</strong><span>À votre écoute</span></div>
+ <div class="benefit"><strong>✦ Style & élégance</strong><span>Pour toutes les occasions</span></div>
+</div>
+
 <section class="section" id="categories">
- <div class="section-head">
-  <small>NOS UNIVERS</small>
+ <div class="section-heading">
+  <small>Explorez notre univers</small>
   <h2>Nos catégories</h2>
   <p>Trouvez les articles qui correspondent à votre style.</p>
  </div>
  <div class="categories">
-  <button class="category" onclick="chooseCategory('Vêtements')">
-   <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500" alt="Vêtements">
-   <span>Vêtements</span>
-  </button>
-  <button class="category" onclick="chooseCategory('Chaussures')">
-   <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Chaussures">
-   <span>Chaussures</span>
-  </button>
-  <button class="category" onclick="chooseCategory('Sacs')">
-   <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500" alt="Sacs">
-   <span>Sacs</span>
-  </button>
-  <button class="category" onclick="chooseCategory('Accessoires')">
-   <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Accessoires">
-   <span>Accessoires</span>
-  </button>
+  <div class="category" onclick="chooseCategory('Vêtements')">
+   <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80" alt="Vêtements" loading="lazy">
+   <div class="category-label"><strong>Vêtements</strong><span>Découvrir</span></div>
+  </div>
+  <div class="category" onclick="chooseCategory('Chaussures')">
+   <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80" alt="Chaussures" loading="lazy">
+   <div class="category-label"><strong>Chaussures</strong><span>Découvrir</span></div>
+  </div>
+  <div class="category" onclick="chooseCategory('Sacs')">
+   <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80" alt="Sacs" loading="lazy">
+   <div class="category-label"><strong>Sacs</strong><span>Découvrir</span></div>
+  </div>
+  <div class="category" onclick="chooseCategory('Accessoires')">
+   <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=700&q=80" alt="Accessoires" loading="lazy">
+   <div class="category-label"><strong>Accessoires</strong><span>Découvrir</span></div>
+  </div>
  </div>
+</section>
+
+<section class="promo" id="promotions">
+ <div class="eyebrow">L'offre du moment</div>
+ <h2>Un style qui fait la différence</h2>
+ <p>Découvrez nos sélections et profitez de nos articles en promotion.</p>
+ <a href="#boutique" class="btn">Voir les articles</a>
 </section>
 
 <section class="section" id="boutique">
- <div class="section-head">
-  <small>NOTRE SÉLECTION</small>
-  <h2>Découvrez nos produits</h2>
-  <p>Choisissez votre article et ajoutez-le à votre panier.</p>
+ <div class="section-heading">
+  <small>La sélection MILLES STYLES</small>
+  <h2>Notre boutique</h2>
+  <p>Découvrez tous nos articles.</p>
  </div>
- <div class="toolbar">
-  <input id="search" type="search" placeholder="Rechercher un article..." oninput="renderProducts()">
-  <select id="quality" onchange="renderProducts()">
-   <option value="">Toutes les qualités</option>
-   <option value="Standard">Standard</option>
-   <option value="Premium">Premium</option>
-   <option value="Luxe">Luxe</option>
+
+ <div class="shop-tools">
+  <input type="search" id="search" placeholder="Rechercher un produit..." oninput="renderProducts()">
+  <select id="categoryFilter" onchange="renderProducts()">
+   <option value="">Toutes les catégories</option>
+   <option>Vêtements</option><option>Chaussures</option><option>Sacs</option>
+   <option>Montres</option><option>Bijoux</option><option>Parfums</option>
+   <option>Beauté</option><option>Accessoires</option>
   </select>
   <select id="sort" onchange="renderProducts()">
-   <option value="default">Trier par</option>
+   <option value="default">Trier par défaut</option>
    <option value="low">Prix croissant</option>
    <option value="high">Prix décroissant</option>
+   <option value="name">Nom A-Z</option>
   </select>
  </div>
- <div class="filters" id="filters"></div>
- <div class="products" id="products"></div>
+ <p id="resultCount" style="font-size:12px;color:#888;margin-bottom:17px"></p>
+ <div class="product-grid" id="productGrid"></div>
 </section>
 
-<section class="benefits">
- <div class="benefit-grid">
-  <div><h3>✦ Qualité</h3><p>Des articles proposés en différentes gammes.</p></div>
-  <div><h3>✦ Diversité</h3><p>Un choix de produits pour différents styles.</p></div>
-  <div><h3>✦ Proximité</h3><p>Un contact direct pour vos commandes.</p></div>
- </div>
+<section class="newsletter">
+ <h2>Rejoignez notre univers</h2>
+ <p>Inscrivez-vous pour être informé des nouveautés et offres.</p>
+ <form onsubmit="newsletter(event)">
+  <input type="email" placeholder="Votre adresse e-mail" required>
+  <button class="btn">S'inscrire</button>
+ </form>
 </section>
 
 <footer id="contact">
- <div class="logo">MILLES STYLES</div>
- <p>Le style qui vous ressemble.</p>
- <p>Vêtements • Chaussures • Sacs • Accessoires</p>
- <p>WhatsApp : <a id="footerWhatsapp" href="#">Nous contacter</a></p>
- <p>© 2026 MILLES STYLES — Tous droits réservés.</p>
+ <div class="footer-grid">
+  <div>
+   <h3>MILLES STYLES</h3>
+   <p>Votre destination mode pour découvrir des articles élégants, modernes et tendance.</p>
+  </div>
+  <div>
+   <h3>Navigation</h3>
+   <a href="#">Accueil</a><a href="#categories">Catégories</a><a href="#boutique">Boutique</a><a href="#promotions">Promotions</a>
+  </div>
+  <div>
+   <h3>Catégories</h3>
+   <a href="#boutique">Vêtements</a><a href="#boutique">Chaussures</a><a href="#boutique">Sacs</a><a href="#boutique">Accessoires</a>
+  </div>
+  <div>
+   <h3>Contact</h3>
+   <p>Commandes et renseignements</p>
+   <a href="#" onclick="contactWhatsApp();return false">Nous contacter sur WhatsApp</a>
+   <p>Instagram : @millesstyles</p>
+  </div>
+ </div>
+ <div class="copyright">© 2026 MILLES STYLES — Tous droits réservés.</div>
 </footer>
 
-<div class="overlay" id="overlay" onclick="closeOutside(event)">
- <div class="drawer">
-  <div class="drawer-head">
-   <h2>Mon panier</h2>
-   <button class="close" onclick="closeCart()">×</button>
-  </div>
-  <div id="cartItems"></div>
-  <div class="cart-total"><span>Total</span><span id="total">0 FCFA</span></div>
-  <button class="checkout" onclick="checkout()">COMMANDER SUR WHATSAPP</button>
-  <p class="contact">La commande sera préparée dans WhatsApp. Le paiement sera convenu avec la boutique.</p>
+<div class="overlay" id="overlay" onclick="closePanels()"></div>
+<aside class="drawer" id="cartDrawer">
+ <div class="drawer-head"><h2>Mon panier</h2><button class="close" onclick="closePanels()">×</button></div>
+ <div id="cartItems"></div>
+ <div class="cart-total"><span>Total</span><span id="cartTotal">0 FCFA</span></div>
+ <button class="btn full" onclick="checkout()">Commander sur WhatsApp</button>
+</aside>
+
+<aside class="drawer" id="favoriteDrawer">
+ <div class="drawer-head"><h2>Mes favoris</h2><button class="close" onclick="closePanels()">×</button></div>
+ <div id="favoriteItems"></div>
+</aside>
+
+<div class="modal" id="detailModal" onclick="if(event.target===this)closeDetail()">
+ <div class="modal-box">
+  <button class="close" style="float:right" onclick="closeDetail()">×</button>
+  <div id="detailContent"></div>
  </div>
 </div>
 
-<script>
-// PERSONNALISATION DE LA BOUTIQUE
-const WHATSAPP_NUMBER = "2290146548839"; 
+<div class="modal" id="adminModal" onclick="if(event.target===this)closeAdmin()">
+ <div class="modal-box">
+  <button class="close" style="float:right" onclick="closeAdmin()">×</button>
+  <h2 style="font-family:'Playfair Display';margin:15px 0">Gestion de la boutique</h2>
+  <p style="font-size:12px;color:#777;margin-bottom:20px">Ajoute un produit à ta boutique. Les changements sont enregistrés sur cet appareil uniquement.</p>
+  <form class="admin-form" id="productForm" onsubmit="addProduct(event)">
+   <input id="newName" placeholder="Nom du produit" required>
+   <select id="newCategory" required>
+    <option value="">Catégorie</option>
+    <option>Vêtements</option><option>Chaussures</option><option>Sacs</option>
+    <option>Montres</option><option>Bijoux</option><option>Parfums</option>
+    <option>Beauté</option><option>Accessoires</option>
+   </select>
+   <input id="newPrice" type="number" min="0" placeholder="Prix en FCFA" required>
+   <input id="newImage" type="url" placeholder="Lien de la photo du produit" required>
+   <textarea id="newDescription" placeholder="Description du produit"></textarea>
+   <button class="btn">Ajouter le produit</button>
+  </form>
+  <hr style="margin:25px 0;border:0;border-top:1px solid #eee">
+  <h3 style="margin-bottom:12px">Produits personnalisés</h3>
+  <div id="adminProducts"></div>
+ </div>
+</div>
 
-// CATALOGUE DE DÉMONSTRATION
-const products = [
- {id:1,name:"Chemise élégante",category:"Vêtements",quality:"Premium",price:8500,image:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=600",sizes:["S","M","L","XL"],colors:["Blanc","Noir"]},
- {id:2,name:"T-shirt classique",category:"Vêtements",quality:"Standard",price:4000,image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600",sizes:["S","M","L","XL"],colors:["Blanc","Noir"]},
- {id:3,name:"Robe tendance",category:"Vêtements",quality:"Luxe",price:15000,image:"https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=600",sizes:["S","M","L"],colors:["Noir","Beige"]},
- {id:4,name:"Sneakers modernes",category:"Chaussures",quality:"Premium",price:18000,image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600",sizes:["38","39","40","41","42","43"],colors:["Rouge","Blanc"]},
- {id:5,name:"Chaussures urbaines",category:"Chaussures",quality:"Standard",price:12000,image:"https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600",sizes:["39","40","41","42","43"],colors:["Noir","Marron"]},
- {id:6,name:"Sac à main chic",category:"Sacs",quality:"Luxe",price:22000,image:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600",sizes:["Unique"],colors:["Noir","Beige"]},
- {id:7,name:"Montre élégante",category:"Accessoires",quality:"Premium",price:12500,image:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600",sizes:["Unique"],colors:["Noir","Argent"]},
- {id:8,name:"Lunettes tendance",category:"Accessoires",quality:"Standard",price:5000,image:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=600",sizes:["Unique"],colors:["Noir","Marron"]}
+<div class="toast" id="toast"></div>
+
+<script>
+// Remplace ce numéro par ton numéro WhatsApp.
+// Format : indicatif du pays + numéro, sans + ni espaces.
+const WHATSAPP_NUMBER = "229XXXXXXXXXX";
+
+const initialProducts = [
+{id:1,name:"Chemise classique blanche",cat:"Vêtements",price:8500,old:10000,tag:"Populaire",img:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=700&q=80",desc:"Une chemise élégante pour toutes les occasions."},
+{id:2,name:"Robe élégante",cat:"Vêtements",price:15000,old:18000,tag:"Tendance",img:"https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=700&q=80",desc:"Une robe raffinée pour un style distingué."},
+{id:3,name:"Veste moderne",cat:"Vêtements",price:22000,old:25000,tag:"Nouveau",img:"https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=700&q=80",desc:"Une veste moderne et polyvalente."},
+{id:4,name:"T-shirt premium",cat:"Vêtements",price:6500,tag:"",img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80",desc:"Un essentiel confortable pour le quotidien."},
+{id:5,name:"Ensemble tendance",cat:"Vêtements",price:18000,tag:"",img:"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80",desc:"Un ensemble moderne et élégant."},
+{id:6,name:"Pantalon élégant",cat:"Vêtements",price:12000,tag:"",img:"https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=700&q=80",desc:"Une coupe confortable et soignée."},
+{id:7,name:"Baskets sport",cat:"Chaussures",price:18000,old:22000,tag:"Promo",img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80",desc:"Des baskets au style sportif."},
+{id:8,name:"Sneakers blanches",cat:"Chaussures",price:16000,tag:"",img:"https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=700&q=80",desc:"Des sneakers faciles à associer."},
+{id:9,name:"Chaussures classiques",cat:"Chaussures",price:25000,tag:"",img:"https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&w=700&q=80",desc:"Une paire pour une allure élégante."},
+{id:10,name:"Sandales modernes",cat:"Chaussures",price:11000,tag:"",img:"https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&w=700&q=80",desc:"Des sandales modernes et confortables."},
+{id:11,name:"Sac à main chic",cat:"Sacs",price:22000,old:26000,tag:"Populaire",img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80",desc:"Un sac chic pour compléter votre tenue."},
+{id:12,name:"Sac à bandoulière",cat:"Sacs",price:17000,tag:"",img:"https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=700&q=80",desc:"Un sac pratique et élégant."},
+{id:13,name:"Sac élégant",cat:"Sacs",price:19500,tag:"Nouveau",img:"https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=700&q=80",desc:"Une pièce intemporelle."},
+{id:14,name:"Sac de voyage",cat:"Sacs",price:28000,tag:"",img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80",desc:"Un sac spacieux pour vos déplacements."},
+{id:15,name:"Montre élégante",cat:"Montres",price:28000,old:32000,tag:"Premium",img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=80",desc:"Une montre au design raffiné."},
+{id:16,name:"Montre classique",cat:"Montres",price:24000,tag:"",img:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=700&q=80",desc:"Un accessoire intemporel."},
+{id:17,name:"Montre sportive",cat:"Montres",price:20000,tag:"",img:"https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=700&q=80",desc:"Un style dynamique et moderne."},
+{id:18,name:"Bracelet raffiné",cat:"Bijoux",price:7500,tag:"",img:"https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=700&q=80",desc:"Un bracelet délicat pour votre style."},
+{id:19,name:"Collier élégant",cat:"Bijoux",price:9500,tag:"",img:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80",desc:"Un collier raffiné."},
+{id:20,name:"Boucles d'oreilles",cat:"Bijoux",price:6000,tag:"",img:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80",desc:"Des boucles pour une touche lumineuse."},
+{id:21,name:"Parfum signature",cat:"Parfums",price:18000,old:21000,tag:"Populaire",img:"https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=80",desc:"Une fragrance pour votre quotidien."},
+{id:22,name:"Parfum élégant",cat:"Parfums",price:22000,tag:"",img:"https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=700&q=80",desc:"Une fragrance au caractère affirmé."},
+{id:23,name:"Eau de parfum",cat:"Parfums",price:19500,tag:"",img:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=700&q=80",desc:"Une sélection parfumée."},
+{id:24,name:"Soin beauté",cat:"Beauté",price:8500,tag:"",img:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=80",desc:"Un produit pour votre routine beauté."},
+{id:25,name:"Crème de soin",cat:"Beauté",price:7000,tag:"",img:"https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=700&q=80",desc:"Un soin pour votre routine."},
+{id:26,name:"Lunettes de soleil",cat:"Accessoires",price:9000,tag:"Tendance",img:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80",desc:"Des lunettes au style affirmé."},
+{id:27,name:"Ceinture classique",cat:"Accessoires",price:6500,tag:"",img:"https://images.unsplash.com/photo-1624222247344-550fb8f7b5c1?auto=format&fit=crop&w=700&q=80",desc:"Une ceinture pour compléter votre look."},
+{id:28,name:"Portefeuille",cat:"Accessoires",price:8000,tag:"",img:"https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=700&q=80",desc:"Un portefeuille pratique et élégant."},
+{id:29,name:"Casquette moderne",cat:"Accessoires",price:5000,tag:"",img:"https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=700&q=80",desc:"Une casquette pour un style décontracté."},
+{id:30,name:"Foulard élégant",cat:"Accessoires",price:6000,tag:"",img:"https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=700&q=80",desc:"Une touche de couleur et d'élégance."}
 ];
 
-let cart = JSON.parse(localStorage.getItem("millesCart") || "[]");
-let activeCategory = "Tous";
+let products = [...initialProducts];
+let customProducts = JSON.parse(localStorage.getItem("ms_custom") || "[]");
+products = products.concat(customProducts);
+let cart = JSON.parse(localStorage.getItem("ms_cart") || "[]");
+let favorites = JSON.parse(localStorage.getItem("ms_favorites") || "[]");
 
-const money = n => new Intl.NumberFormat("fr-FR").format(n)+" FCFA";
-
-function saveCart(){
- localStorage.setItem("millesCart",JSON.stringify(cart));
- updateCart();
+function money(value){
+ return new Intl.NumberFormat("fr-FR").format(value)+" FCFA";
 }
-
-function chooseCategory(category){
- activeCategory=category;
- renderProducts();
- document.getElementById("boutique").scrollIntoView({behavior:"smooth"});
+function save(){
+ localStorage.setItem("ms_cart",JSON.stringify(cart));
+ localStorage.setItem("ms_favorites",JSON.stringify(favorites));
+ localStorage.setItem("ms_custom",JSON.stringify(customProducts));
 }
-
-function renderFilters(){
- const categories=["Tous","Vêtements","Chaussures","Sacs","Accessoires"];
- document.getElementById("filters").innerHTML=categories.map(c=>
- `<button class="filter ${activeCategory===c?'active':''}" onclick="chooseCategory('${c}')">${c}</button>`
- ).join("");
+function toast(message){
+ const el=document.getElementById("toast");
+ el.textContent=message;el.classList.add("show");
+ setTimeout(()=>el.classList.remove("show"),2400);
 }
-
+function safeImage(url){
+ return url || "https://placehold.co/600x700/f6f2eb/222?text=Photo+produit";
+}
 function renderProducts(){
- renderFilters();
- let list=products.filter(p=>{
-  const search=document.getElementById("search").value.toLowerCase();
-  const quality=document.getElementById("quality").value;
-  return (activeCategory==="Tous"||p.category===activeCategory)
-   && p.name.toLowerCase().includes(search)
-   && (!quality||p.quality===quality);
- });
+ const query=document.getElementById("search").value.toLowerCase();
+ const cat=document.getElementById("categoryFilter").value;
  const sort=document.getElementById("sort").value;
+ let list=products.filter(p=>
+  p.name.toLowerCase().includes(query) &&
+  (!cat || p.cat===cat)
+ );
  if(sort==="low")list.sort((a,b)=>a.price-b.price);
  if(sort==="high")list.sort((a,b)=>b.price-a.price);
-
- const container=document.getElementById("products");
- if(!list.length){
-  container.innerHTML='<div class="empty">Aucun produit trouvé.</div>';
-  return;
- }
- container.innerHTML=list.map(p=>`
- <article class="product">
+ if(sort==="name")list.sort((a,b)=>a.name.localeCompare(b.name));
+ document.getElementById("resultCount").textContent=list.length+" produit(s) trouvé(s)";
+ const grid=document.getElementById("productGrid");
+ if(!list.length){grid.innerHTML='<div class="empty">Aucun produit trouvé.</div>';return;}
+ grid.innerHTML=list.map(p=>`
+ <article class="product-card">
   <div class="product-image">
-   <img src="${p.image}" alt="${p.name}" loading="lazy">
-   <span class="tag">${p.quality}</span>
+   <img src="${safeImage(p.img)}" alt="${p.name.replace(/"/g,"")}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x700/f6f2eb/222?text=Photo+indisponible'">
+   ${p.tag?`<span class="tag">${p.tag}</span>`:""}
+   <button class="favorite ${favorites.includes(p.id)?"active":""}" onclick="toggleFavorite(${p.id})">♡</button>
   </div>
   <div class="product-info">
-   <small>${p.category}</small>
+   <div class="product-cat">${p.cat}</div>
    <h3>${p.name}</h3>
-   <div class="price">${money(p.price)}</div>
-   <select id="size-${p.id}" aria-label="Taille de ${p.name}">
-    ${p.sizes.map(s=>`<option>${s}</option>`).join("")}
-   </select>
-   <select id="color-${p.id}" aria-label="Couleur de ${p.name}">
-    ${p.colors.map(c=>`<option>${c}</option>`).join("")}
-   </select>
-   <button class="add-btn" onclick="addToCart(${p.id})">AJOUTER AU PANIER</button>
+   <span class="price">${money(p.price)}</span>
+   ${p.old?`<span class="old-price">${money(p.old)}</span>`:""}
+   <div class="card-actions">
+    <button onclick="addToCart(${p.id})">Ajouter</button>
+    <button onclick="showDetail(${p.id})">Détails</button>
+   </div>
   </div>
  </article>`).join("");
 }
-
+function chooseCategory(cat){
+ document.getElementById("categoryFilter").value=cat;
+ renderProducts();
+ document.getElementById("boutique").scrollIntoView({behavior:"smooth"});
+}
+function toggleFavorite(id){
+ favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];
+ save();renderProducts();renderFavorites();
+ toast(favorites.includes(id)?"Ajouté aux favoris":"Retiré des favoris");
+}
+function openFavorites(){
+ renderFavorites();openPanel("favoriteDrawer");
+}
+function renderFavorites(){
+ const box=document.getElementById("favoriteItems");
+ const list=products.filter(p=>favorites.includes(p.id));
+ box.innerHTML=list.length?list.map(p=>`
+ <div class="cart-row"><img src="${safeImage(p.img)}" alt="">
+ <div><h4>${p.name}</h4><p>${money(p.price)}</p>
+ <button class="btn" style="padding:7px;margin-top:7px" onclick="addToCart(${p.id})">Ajouter au panier</button>
+ <button onclick="toggleFavorite(${p.id})" style="border:0;background:none;margin-left:7px">Retirer</button></div></div>`).join(""):'<p class="empty">Aucun favori pour le moment.</p>';
+}
 function addToCart(id){
- const p=products.find(x=>x.id===id);
- const size=document.getElementById("size-"+id).value;
- const color=document.getElementById("color-"+id).value;
- const key=id+"-"+size+"-"+color;
- const found=cart.find(x=>x.key===key);
+ const found=cart.find(x=>x.id===id);
  if(found)found.qty++;
- else cart.push({key,id,size,color,qty:1});
- saveCart();
- alert("Article ajouté au panier !");
+ else cart.push({id,qty:1});
+ save();renderCart();toast("Produit ajouté au panier");
 }
-
-function updateCart(){
- const count=cart.reduce((s,x)=>s+x.qty,0);
- document.getElementById("cartCount").textContent=count;
- document.getElementById("total").textContent=money(cart.reduce((s,x)=>{
-  return s+products.find(p=>p.id===x.id).price*x.qty;
- },0));
+function changeQty(id,delta){
+ const item=cart.find(x=>x.id===id);
+ if(!item)return;
+ item.qty+=delta;
+ if(item.qty<=0)cart=cart.filter(x=>x.id!==id);
+ save();renderCart();
+}
+function renderCart(){
  const box=document.getElementById("cartItems");
- if(!cart.length){
-  box.innerHTML='<p class="empty">Votre panier est vide.</p>';
-  return;
- }
- box.innerHTML=cart.map(x=>{
-  const p=products.find(p=>p.id===x.id);
-  return `<div class="cart-item">
-   <img src="${p.image}" alt="">
-   <div style="flex:1">
-    <strong>${p.name}</strong>
-    <p>${x.size} • ${x.color}</p>
-    <p>${money(p.price)}</p>
-    <div class="qty">
-     <button onclick="changeQty('${x.key}',-1)">−</button>
-     <span>${x.qty}</span>
-     <button onclick="changeQty('${x.key}',1)">+</button>
-     <button onclick="removeItem('${x.key}')" style="margin-left:auto;width:auto;padding:3px 7px">Supprimer</button>
-    </div>
-   </div>
+ let total=0,count=0;
+ box.innerHTML=cart.length?cart.map(item=>{
+  const p=products.find(x=>x.id===item.id);
+  if(!p)return "";
+  total+=p.price*item.qty;count+=item.qty;
+  return `<div class="cart-row">
+   <img src="${safeImage(p.img)}" alt="">
+   <div style="flex:1"><h4>${p.name}</h4><p>${money(p.price)}</p>
+   <div class="qty"><button onclick="changeQty(${p.id},-1)">−</button><span>${item.qty}</span><button onclick="changeQty(${p.id},1)">+</button></div></div>
   </div>`;
- }).join("");
+ }).join(""):'<p class="empty">Votre panier est vide.</p>';
+ document.getElementById("cartTotal").textContent=money(total);
+ document.getElementById("cartCount").textContent=count;
 }
-
-function changeQty(key,delta){
- const item=cart.find(x=>x.key===key);
- if(item){
-  item.qty+=delta;
-  if(item.qty<=0)removeItem(key);
-  else saveCart();
- }
-}
-
-function removeItem(key){
- cart=cart.filter(x=>x.key!==key);
- saveCart();
-}
-
-function openCart(){
+function openPanel(id){
  document.getElementById("overlay").classList.add("show");
+ document.getElementById(id).classList.add("show");
 }
-function closeCart(){
+function openCart(){renderCart();openPanel("cartDrawer")}
+function closePanels(){
  document.getElementById("overlay").classList.remove("show");
+ document.querySelectorAll(".drawer").forEach(x=>x.classList.remove("show"));
 }
-function closeOutside(e){
- if(e.target.id==="overlay")closeCart();
+function showDetail(id){
+ const p=products.find(x=>x.id===id);
+ if(!p)return;
+ document.getElementById("detailContent").innerHTML=`
+ <div class="detail-layout">
+  <img src="${safeImage(p.img)}" alt="${p.name}" onerror="this.src='https://placehold.co/600x700/f6f2eb/222?text=Photo+indisponible'">
+  <div><div class="product-cat">${p.cat}</div><h2>${p.name}</h2>
+  <strong class="price">${money(p.price)}</strong>
+  <p>${p.desc||"Découvrez cet article de notre collection."}</p>
+  <label>Quantité</label><select id="detailQty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select>
+  <button class="btn full" style="margin-top:20px" onclick="addDetailToCart(${p.id})">Ajouter au panier</button>
+  </div>
+ </div>`;
+ document.getElementById("detailModal").classList.add("show");
 }
-
+function addDetailToCart(id){
+ const qty=Number(document.getElementById("detailQty").value);
+ const item=cart.find(x=>x.id===id);
+ if(item)item.qty+=qty;else cart.push({id,qty});
+ save();renderCart();closeDetail();toast("Ajouté au panier");
+}
+function closeDetail(){document.getElementById("detailModal").classList.remove("show")}
 function checkout(){
- if(!cart.length){
-  alert("Votre panier est vide.");
-  return;
- }
- if(!/^229\d{10}$/.test(WHATSAPP_NUMBER)){
-  alert("Configure d'abord ton numéro WhatsApp dans le code.");
-  return;
- }
- let total=0;
- let message="Bonjour MILLES STYLES ! Je souhaite commander :\n\n";
- cart.forEach(x=>{
-  const p=products.find(p=>p.id===x.id);
-  total+=p.price*x.qty;
-  message+=`• ${p.name}\n  Qualité : ${p.quality}\n  Taille : ${x.size}\n  Couleur : ${x.color}\n  Quantité : ${x.qty}\n  Prix : ${money(p.price*x.qty)}\n\n`;
- });
- message+="TOTAL : "+money(total);
+ if(!cart.length){toast("Votre panier est vide");return;}
+ const lines=cart.map(item=>{
+  const p=products.find(x=>x.id===item.id);
+  return p?`- ${p.name} x${item.qty} : ${money(p.price*item.qty)}`:"";
+ }).filter(Boolean);
+ const total=cart.reduce((sum,item)=>{
+  const p=products.find(x=>x.id===item.id);return sum+(p?p.price*item.qty:0);
+ },0);
+ const message="Bonjour MILLES STYLES, je souhaite commander :\n"+lines.join("\n")+"\nTotal : "+money(total)+"\nMerci de me confirmer la disponibilité.";
+ if(WHATSAPP_NUMBER.includes("X")){toast("Configure d'abord ton numéro WhatsApp dans le code");return;}
  window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank");
 }
-
-document.getElementById("footerWhatsapp").href="https://wa.me/"+WHATSAPP_NUMBER;
+function contactWhatsApp(){
+ if(WHATSAPP_NUMBER.includes("X")){toast("Configure ton numéro WhatsApp dans le code");return;}
+ window.open("https://wa.me/"+WHATSAPP_NUMBER,"_blank");
+}
+function openAdmin(){
+ document.getElementById("adminModal").classList.add("show");
+ renderAdminProducts();
+}
+function closeAdmin(){document.getElementById("adminModal").classList.remove("show")}
+function addProduct(e){
+ e.preventDefault();
+ const p={
+  id:Date.now(),
+  name:document.getElementById("newName").value.trim(),
+  cat:document.getElementById("newCategory").value,
+  price:Number(document.getElementById("newPrice").value),
+  img:document.getElementById("newImage").value.trim(),
+  desc:document.getElementById("newDescription").value.trim(),
+  tag:"Nouveau"
+ };
+ customProducts.push(p);products.push(p);save();
+ e.target.reset();renderProducts();renderAdminProducts();toast("Produit ajouté");
+}
+function renderAdminProducts(){
+ const box=document.getElementById("adminProducts");
+ box.innerHTML=customProducts.length?customProducts.map(p=>`
+ <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #eee;gap:10px">
+ <span style="font-size:12px">${p.name} — ${money(p.price)}</span>
+ <button class="btn" style="padding:7px" onclick="deleteProduct(${p.id})">Supprimer</button>
+ </div>`).join(""):'<p style="font-size:12px;color:#888">Aucun produit personnalisé.</p>';
+}
+function deleteProduct(id){
+ customProducts=customProducts.filter(p=>p.id!==id);
+ products=products.filter(p=>p.id!==id);
+ cart=cart.filter(p=>p.id!==id);
+ favorites=favorites.filter(x=>x!==id);
+ save();renderProducts();renderCart();renderAdminProducts();toast("Produit supprimé");
+}
+function newsletter(e){
+ e.preventDefault();toast("Merci ! Cette démonstration ne sauvegarde pas encore les inscriptions.");
+ e.target.reset();
+}
 renderProducts();
-updateCart();
+renderCart();
 </script>
 </body>
 </html>
